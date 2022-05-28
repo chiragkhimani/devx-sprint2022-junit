@@ -18,6 +18,7 @@ import com.main.Calculator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 public class ModuloTest {
     Calculator c;

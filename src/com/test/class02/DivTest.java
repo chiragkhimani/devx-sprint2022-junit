@@ -17,9 +17,11 @@ package com.test.class02;
 
 
 import com.main.Calculator;
+import com.test.group.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 public class DivTest {
     Calculator c;
@@ -29,12 +31,14 @@ public class DivTest {
         c = new Calculator();
     }
 
+    @Category({ChiragTest.class, SmokeTest.class})
     @Test
     public void verifyWithOneZeroAndOnePositive(){
         int actResult = c.div(0,0);
         Assert.fail("No Exception thrown");
     }
 
+    @Category({FalguniTest.class, WIPTest.class})
     @Test
     public void verifyWithOneZeroAndOtherzero(){
         int expResult = 1;
@@ -42,30 +46,39 @@ public class DivTest {
         Assert.assertEquals(expResult, actResult);
     }
 
+    @Category({CriticalTest.class})
     @Test
     public void verifyWithNegative10AndPositiveThree(){
         int expResult = -2;
         int actResult = c.div(-10,5);
         Assert.assertEquals(expResult, actResult);
     }
+
+    @Category({FalguniTest.class, WIPTest.class})
     @Test
     public void verifyWithNegativeFiveAndNegativeThree(){
         int expResult = -2;
         int actResult = c.div(10,-5);
         Assert.assertEquals(expResult, actResult);
     }
+
+    @Category({ChiragTest.class, WIPTest.class})
     @Test
     public void verifyWithNegativeFiveAndPositiveZero(){
         int expResult = 0;
         int actResult = c.div(10,20);
         Assert.assertEquals(expResult, actResult);
     }
+
+    @Category({FalguniTest.class, SmokeTest.class})
     @Test
     public void verifyWithPositiveThirtyAndPositiveTen(){
         int expResult =0;
         int actResult = c.div(1,10);
         Assert.assertEquals(expResult, actResult);
     }
+
+    @Category({ChiragTest.class, WIPTest.class})
     @Test
     public void verifyWithPositiveLongNumberAndPositiveLongNumber(){
         int expResult =1;
